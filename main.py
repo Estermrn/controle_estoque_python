@@ -1,4 +1,5 @@
-from categoria import Categoria
+from categoria import Categoria, Tamanho, Embalagem
+
 
 def main():
     print('========================')
@@ -10,8 +11,8 @@ def main():
     #Criação do objeto categoria, definindo o nome, tamanho e embalagem
     categoria = Categoria(
         "Bebidas",
-        "Médio",
-        "Plástico"
+        Tamanho.MEDIO,
+        Embalagem.PLASTICO 
     )
 
 if __name__ == '__main__':
