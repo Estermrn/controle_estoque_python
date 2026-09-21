@@ -1,5 +1,5 @@
-from categoria import Categoria, Tamanho, Embalagem
-
+from categoria import Categoria, Embalagem, Tamanho
+from produto import Produto, Unidade
 
 def main():
     print('========================')
@@ -7,13 +7,6 @@ def main():
     print('========================')
     print()
     print('Sistema iniciado com sucesso.')
-
-    #Criação do objeto categoria, definindo o nome, tamanho e embalagem
-    categoria = Categoria(
-        "Bebidas",
-        Tamanho.MEDIO,
-        Embalagem.PLASTICO 
-    )
 
 if __name__ == '__main__':
     main()
