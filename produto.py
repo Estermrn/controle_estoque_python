@@ -60,7 +60,7 @@ def cadastrar_produto(produtos, categorias):
     try:
         unidade = Unidade(unidade)
     except ValueError:
-        print("Tamanho inválido")
+        print("Unidade inválida")
         return
 
     try:
@@ -88,7 +88,7 @@ def cadastrar_produto(produtos, categorias):
 
 def listar_produtos(lista):
     for numero, produto in enumerate(lista, start=1):
-        print(numero, "-", produto.nome)
+        print(numero, "-", produto.nome, "| R$", produto.preco_unitario)
 
 def buscar_produto(lista, nome_buscado):
     for produto in lista:
@@ -130,3 +130,16 @@ def excluir_produto(lista, nome):
         return True
 
     return False
+
+def reajustar_preco(lista, percentual):
+    if not lista:
+        return False
+    if percentual <= -100:
+        return False
+    for produto in lista:
+        novo_preco = produto.preco_unitario + (percentual / 100 ) * produto.preco_unitario
+        produto.preco_unitario = novo_preco
+    return True
+
+
+
